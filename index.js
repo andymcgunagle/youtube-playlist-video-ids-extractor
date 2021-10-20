@@ -1,7 +1,6 @@
 import fs from 'fs/promises';
 import { google } from 'googleapis';
 import { config } from 'dotenv';
-
 config();
 
 const youtube = google.youtube({
