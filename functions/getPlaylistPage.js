@@ -1,6 +1,6 @@
 import { google } from 'googleapis';
 
-export const getPlaylistPage = async (playlistId, token = null) => {
+export const getPlaylistPage = async (playlistId, youTubeApiKey, token = null) => {
   const params = {
     part: 'snippet, contentDetails, id',
     playlistId,
@@ -12,7 +12,7 @@ export const getPlaylistPage = async (playlistId, token = null) => {
 
   const youtube = google.youtube({
     version: 'v3',
-    auth: process.env.YOUTUBE_API_KEY
+    auth: youTubeApiKey
   });
 
   const response = await youtube.playlistItems.list(params);

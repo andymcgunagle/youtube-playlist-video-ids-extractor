@@ -3,15 +3,17 @@ import { writeToFile } from "./writeToFile.js";
 import { sortAlphabetically } from "./sortAlphabetically.js";
 import { pushItemsToArray } from "./pushItemsToArray.js";
 
-export const getAllPagesofPlaylist = async (playlistId) => {
+export const getAllPagesofPlaylist = async ({ playlistIdOrUrl, youTubeApiKey }) => {
   const allPagesData = [];
 
-  let response = await getPlaylistPage(playlistId);
+  if (playlistIdOrUrl.includes("list=")) playlistIdOrUrl = playlistIdOrUrl.split("list=")[1];
+
+  let response = await getPlaylistPage(playlistIdOrUrl, youTubeApiKey);
 
   pushItemsToArray(response?.data?.items, allPagesData);
 
   do {
-    response = await getPlaylistPage(playlistId, response?.data?.nextPageToken);
+    response = await getPlaylistPage(playlistIdOrUrl, youTubeApiKey, response?.data?.nextPageToken);
 
     pushItemsToArray(response?.data?.items, allPagesData);
 
