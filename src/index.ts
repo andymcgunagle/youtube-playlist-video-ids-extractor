@@ -1,15 +1,13 @@
-import { getAllPagesofPlaylist } from "./functions/getAllPagesofPlaylist.js";
+import { getAllPagesofPlaylist } from "./functions/getAllPagesofPlaylist";
 
 import { config } from 'dotenv';
 
 // Gets YOUTUBE_API_KEY from .env
 config();
 
-// 
-
 try {
   getAllPagesofPlaylist({
-    playlistIdOrUrl: 'PL4QNnZJr8sRPmuz_d87ygGR6YAYEF-fmw',
+    playlistIdOrUrl: 'https://www.youtube.com/playlist?list=PLyfE3pnEkrBMiCPLNDhft9hmeXK1wtkGF',
     youTubeApiKey: process.env.YOUTUBE_API_KEY,
   });
 } catch (error) {
