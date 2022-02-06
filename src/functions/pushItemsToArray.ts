@@ -1,11 +1,5 @@
 import { youtube_v3 } from "googleapis";
 
-export interface Video {
-  name: string | null | undefined,
-  id: string | null | undefined,
-  link: string,
-};
-
 export const pushItemsToArray = (items: youtube_v3.Schema$PlaylistItem[] | undefined, allPagesData: Video[]) => {
   if (items) {
     for (let item of items) {
@@ -17,4 +11,10 @@ export const pushItemsToArray = (items: youtube_v3.Schema$PlaylistItem[] | undef
       allPagesData.push(video);
     };
   };
+};
+
+export interface Video {
+  name: string | null | undefined,
+  id: string | null | undefined,
+  link: string,
 };
