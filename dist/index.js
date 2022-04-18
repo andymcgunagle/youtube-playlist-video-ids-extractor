@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const getAllPagesofPlaylist_1 = require("./functions/getAllPagesofPlaylist");
 const dotenv_1 = require("dotenv");
+const getAllPagesOfPlaylist_1 = require("./functions/getAllPagesOfPlaylist");
 // Gets YOUTUBE_API_KEY from .env
 (0, dotenv_1.config)();
 try {
-    (0, getAllPagesofPlaylist_1.getAllPagesofPlaylist)({
-        playlistIdOrUrl: 'https://www.youtube.com/playlist?list=PLyfE3pnEkrBMiCPLNDhft9hmeXK1wtkGF',
+    (0, getAllPagesOfPlaylist_1.getAllPagesOfPlaylist)({
+        playlistIdOrUrl: 'https://www.youtube.com/playlist?list=PL9dVARCCepE_MbKMQ1ZjGmJ3g-0WNfJzz',
         youTubeApiKey: process.env.YOUTUBE_API_KEY,
     });
 }

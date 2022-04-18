@@ -1,10 +1,11 @@
+import { extractPlaylistId } from "./extractPlaylistId";
 import { getPlaylistPage } from "./getPlaylistPage";
 import { pushItemsToArray, Video } from "./pushItemsToArray";
 import { sortAlphabetically } from "./sortAlphabetically";
 import { writeToFile } from "./writeToFile";
 
-export const getAllPagesofPlaylist = async (
-  { playlistIdOrUrl, youTubeApiKey }: GetAllPagesofPlaylistProps
+export const getAllPagesOfPlaylist = async (
+  { playlistIdOrUrl, youTubeApiKey }: GetAllPagesOfPlaylistProps
 ) => {
   const playlistId = extractPlaylistId(playlistIdOrUrl);
 
@@ -25,7 +26,7 @@ export const getAllPagesofPlaylist = async (
   await writeToFile(allPagesData);
 };
 
-interface GetAllPagesofPlaylistProps {
+interface GetAllPagesOfPlaylistProps {
   playlistIdOrUrl: string,
   youTubeApiKey: string,
 };

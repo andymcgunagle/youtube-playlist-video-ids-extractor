@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "cd src && tsc --watch --preserveWatchOutput",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "save": "git add . && git commit && git push origin main"
   },
   "keywords": [],
   "author": "",

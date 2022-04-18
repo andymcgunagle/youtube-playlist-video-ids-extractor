@@ -1,4 +1,4 @@
-function extractPlaylistId(playlistIdOrUrl: string) {
+export function extractPlaylistId(playlistIdOrUrl: string) {
   let playlistId;
 
   if (playlistIdOrUrl.includes("list=")) {

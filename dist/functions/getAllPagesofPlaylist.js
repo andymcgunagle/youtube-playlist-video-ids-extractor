@@ -9,19 +9,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAllPagesofPlaylist = void 0;
+exports.getAllPagesOfPlaylist = void 0;
+const extractPlaylistId_1 = require("./extractPlaylistId");
 const getPlaylistPage_1 = require("./getPlaylistPage");
-const writeToFile_1 = require("./writeToFile");
-const sortAlphabetically_1 = require("./sortAlphabetically");
 const pushItemsToArray_1 = require("./pushItemsToArray");
-;
-const getAllPagesofPlaylist = ({ playlistIdOrUrl, youTubeApiKey }) => __awaiter(void 0, void 0, void 0, function* () {
-    const allPagesData = [];
-    let playlistId;
-    playlistIdOrUrl.includes("list=") ?
-        playlistId = playlistIdOrUrl.split("list=")[1]
-        : playlistId = playlistIdOrUrl;
+const sortAlphabetically_1 = require("./sortAlphabetically");
+const writeToFile_1 = require("./writeToFile");
+const getAllPagesOfPlaylist = ({ playlistIdOrUrl, youTubeApiKey }) => __awaiter(void 0, void 0, void 0, function* () {
+    const playlistId = (0, extractPlaylistId_1.extractPlaylistId)(playlistIdOrUrl);
     let response = yield (0, getPlaylistPage_1.getPlaylistPage)(playlistId, youTubeApiKey, null);
+    const allPagesData = [];
     (0, pushItemsToArray_1.pushItemsToArray)(response.data.items, allPagesData);
     do {
         response = yield (0, getPlaylistPage_1.getPlaylistPage)(playlistId, youTubeApiKey, response.data.nextPageToken);
@@ -30,4 +27,5 @@ const getAllPagesofPlaylist = ({ playlistIdOrUrl, youTubeApiKey }) => __awaiter(
     allPagesData.sort(sortAlphabetically_1.sortAlphabetically);
     yield (0, writeToFile_1.writeToFile)(allPagesData);
 });
-exports.getAllPagesofPlaylist = getAllPagesofPlaylist;
+exports.getAllPagesOfPlaylist = getAllPagesOfPlaylist;
+;
