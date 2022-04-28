@@ -37,11 +37,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.writeToFile = void 0;
-var promises_1 = require("fs/promises");
+// import fs from 'fs/promises';
+var fs_1 = require("fs");
 var writeToFile = function (data) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, promises_1.default.writeFile("".concat(new Date().toISOString(), ".json"), JSON.stringify(data))];
+            case 0: return [4 /*yield*/, fs_1.promises.writeFile("".concat(new Date().toISOString(), ".json"), JSON.stringify(data))];
             case 1:
                 _a.sent();
                 return [2 /*return*/];

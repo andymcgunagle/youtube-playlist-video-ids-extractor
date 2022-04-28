@@ -1,4 +1,5 @@
-import fs from 'fs/promises';
+// import fs from 'fs/promises';
+import { promises as fs } from "fs";
 import { Video } from "./pushItemsToArray";
 
 export const writeToFile = async (data: Video[]) => {

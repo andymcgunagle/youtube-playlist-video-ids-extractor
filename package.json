@@ -28,6 +28,7 @@
   "homepage": "https://github.com/andymcgunagle/youtube-playlist-video-ids-extractor#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "get-video-data-from-youtube-playlist": "^1.0.0",
     "google-auth-library": "^7.10.1",
     "googleapis": "^89.0.0"
   },
