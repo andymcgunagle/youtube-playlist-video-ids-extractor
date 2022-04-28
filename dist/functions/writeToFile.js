@@ -15,6 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.writeToFile = void 0;
 const promises_1 = __importDefault(require("fs/promises"));
 const writeToFile = (data) => __awaiter(void 0, void 0, void 0, function* () {
-    yield promises_1.default.writeFile(`${new Date().toISOString()}.js`, JSON.stringify(data));
+    yield promises_1.default.writeFile(`${new Date().toISOString()}.json`, JSON.stringify(data));
 });
 exports.writeToFile = writeToFile;

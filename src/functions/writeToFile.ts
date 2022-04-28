@@ -3,7 +3,7 @@ import { Video } from "./pushItemsToArray";
 
 export const writeToFile = async (data: Video[]) => {
   await fs.writeFile(
-    `${new Date().toISOString()}.js`,
+    `${new Date().toISOString()}.json`,
     JSON.stringify(data)
   );
 };
