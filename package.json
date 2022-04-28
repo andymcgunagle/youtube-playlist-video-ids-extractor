@@ -1,16 +1,31 @@
 {
-  "name": "youtube-api-project",
+  "name": "get-video-data-from-youtube-playlist",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Writes video data from all the videos on a YouTube playlist to a JSON file.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "cd src && tsc --watch --preserveWatchOutput",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepare": "npm run build",
     "save": "git add . && git commit && git push origin main"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andymcgunagle/youtube-playlist-video-ids-extractor.git"
+  },
+  "keywords": [
+    "youtube",
+    "api"
+  ],
+  "author": "amcgunagle",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andymcgunagle/youtube-playlist-video-ids-extractor/issues"
+  },
+  "homepage": "https://github.com/andymcgunagle/youtube-playlist-video-ids-extractor#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
     "google-auth-library": "^7.10.1",

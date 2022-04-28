@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sortAlphabetically = void 0;
-const sortAlphabetically = (a, b) => {
+var sortAlphabetically = function (a, b) {
     if (a.name && b.name) {
         if (a.name.toLowerCase() < b.name.toLowerCase())
             return -1;
@@ -14,3 +14,4 @@ const sortAlphabetically = (a, b) => {
     }
 };
 exports.sortAlphabetically = sortAlphabetically;
+//# sourceMappingURL=sortAlphabetically.js.map

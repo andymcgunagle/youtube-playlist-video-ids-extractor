@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.extractPlaylistId = void 0;
 function extractPlaylistId(playlistIdOrUrl) {
-    let playlistId;
+    var playlistId;
     if (playlistIdOrUrl.includes("list=")) {
         playlistId = playlistIdOrUrl.split("list=")[1];
     }
@@ -15,3 +15,4 @@ function extractPlaylistId(playlistIdOrUrl) {
 }
 exports.extractPlaylistId = extractPlaylistId;
 ;
+//# sourceMappingURL=extractPlaylistId.js.map

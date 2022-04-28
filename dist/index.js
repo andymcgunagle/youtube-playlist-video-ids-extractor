@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // import { config } from 'dotenv';
-const getAllPlaylistItems_1 = require("./functions/getAllPlaylistItems");
+var getAllPlaylistItems_1 = require("./functions/getAllPlaylistItems");
 // // Gets YOUTUBE_API_KEY from .env
 // config();
 // try {
@@ -13,3 +13,4 @@ const getAllPlaylistItems_1 = require("./functions/getAllPlaylistItems");
 //   console.error(error);
 // };
 exports.default = getAllPlaylistItems_1.getAllPlaylistItems;
+//# sourceMappingURL=index.js.map
