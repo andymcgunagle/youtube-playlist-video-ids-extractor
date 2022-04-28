@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.pushItemsToArray = void 0;
-const pushItemsToArray = (items, allPagesData) => {
+function pushItemsToArray(items, allPagesData) {
     var _a, _b, _c;
     if (items) {
         for (let item of items) {
@@ -15,6 +15,7 @@ const pushItemsToArray = (items, allPagesData) => {
         ;
     }
     ;
-};
+}
 exports.pushItemsToArray = pushItemsToArray;
+;
 ;

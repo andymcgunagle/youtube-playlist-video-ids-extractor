@@ -1,10 +1,11 @@
 import { google, youtube_v3 } from 'googleapis';
 
-export const getPlaylistPage = async (
+export async function getPlaylistPage(
   playlistId: string,
   youTubeApiKey: string,
   nextPageToken: string | undefined | null
-) => {
+) {
+
   const params: youtube_v3.Params$Resource$Playlistitems$List = {
     part: ['snippet', 'contentDetails', 'id'],
     playlistId,

@@ -1,14 +1,16 @@
-import { config } from 'dotenv';
-import { getAllPagesOfPlaylist } from './functions/getAllPagesOfPlaylist';
+// import { config } from 'dotenv';
+import { getAllPlaylistItems } from './functions/getAllPlaylistItems';
 
-// Gets YOUTUBE_API_KEY from .env
-config();
+// // Gets YOUTUBE_API_KEY from .env
+// config();
 
-try {
-  getAllPagesOfPlaylist({
-    playlistIdOrUrl: 'https://www.youtube.com/playlist?list=PL9dVARCCepE_MbKMQ1ZjGmJ3g-0WNfJzz',
-    youTubeApiKey: process.env.YOUTUBE_API_KEY,
-  });
-} catch (error) {
-  console.error(error);
-};
+// try {
+//   getAllPlaylistItems({
+//     playlistIdOrUrl: 'https://www.youtube.com/playlist?list=PLT2HLAfKI8vPcabybOklq-YhODnabh5Lr',
+//     youTubeApiKey: process.env.YOUTUBE_API_KEY,
+//   });
+// } catch (error) {
+//   console.error(error);
+// };
+
+export default getAllPlaylistItems;

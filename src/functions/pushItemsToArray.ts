@@ -1,6 +1,9 @@
 import { youtube_v3 } from "googleapis";
 
-export const pushItemsToArray = (items: youtube_v3.Schema$PlaylistItem[] | undefined, allPagesData: Video[]) => {
+export function pushItemsToArray(
+  items: youtube_v3.Schema$PlaylistItem[] | undefined,
+  allPagesData: Video[]
+) {
   if (items) {
     for (let item of items) {
       const video: Video = {
@@ -8,6 +11,7 @@ export const pushItemsToArray = (items: youtube_v3.Schema$PlaylistItem[] | undef
         id: item.contentDetails?.videoId,
         link: `https://www.youtube.com/watch?v=${item.contentDetails?.videoId}`,
       };
+
       allPagesData.push(video);
     };
   };

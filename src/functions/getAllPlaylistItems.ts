@@ -4,29 +4,29 @@ import { pushItemsToArray, Video } from "./pushItemsToArray";
 import { sortAlphabetically } from "./sortAlphabetically";
 import { writeToFile } from "./writeToFile";
 
-export const getAllPagesOfPlaylist = async (
-  { playlistIdOrUrl, youTubeApiKey }: GetAllPagesOfPlaylistProps
-) => {
+export async function getAllPlaylistItems({
+  playlistIdOrUrl,
+  youTubeApiKey,
+}: GetAllPlaylistItemsProps) {
   const playlistId = extractPlaylistId(playlistIdOrUrl);
 
   let response = await getPlaylistPage(playlistId, youTubeApiKey, null);
 
-  const allPagesData: Video[] = [];
+  const allItems: Video[] = [];
 
-  pushItemsToArray(response.data.items, allPagesData);
+  pushItemsToArray(response.data.items, allItems);
 
   do {
     response = await getPlaylistPage(playlistId, youTubeApiKey, response.data.nextPageToken);
 
-    pushItemsToArray(response.data.items, allPagesData);
+    pushItemsToArray(response.data.items, allItems);
 
   } while (response.data.nextPageToken);
 
-  allPagesData.sort(sortAlphabetically);
-  await writeToFile(allPagesData);
+  await writeToFile(allItems.sort(sortAlphabetically));
 };
 
-interface GetAllPagesOfPlaylistProps {
+interface GetAllPlaylistItemsProps {
   playlistIdOrUrl: string,
   youTubeApiKey: string,
 };
